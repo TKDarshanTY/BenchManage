@@ -11,24 +11,17 @@ import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
 import lombok.Data;
-
 @Data
 @Entity
-@Table(name="batch")
-public class Batch {
+@Table(name="test")
+public class Test {
 	@Id
-	@GenericGenerator(name = "string_based_custom_sequence", strategy = "com.tyss.benchmanage.controller.BatchIdGenerator")
+	@GenericGenerator(name = "string_based_custom_sequence", strategy = "com.tyss.benchmanage.controller.TestIdGenerator")
 	@GeneratedValue(generator = "string_based_custom_sequence")
 	@Column
-private int bid;
+private byte id;
 	@Column
-private String bName;
+private String name;
 	@Column
-private String category;
-	@Column
-private Date startDate;
-	@Column
-private Date endDate;
-	@Column
-private String status;
+private Date conductedDate;
 }
